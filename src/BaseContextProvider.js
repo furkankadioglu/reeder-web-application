@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 
-const Base = createContext();
+const BaseContext = createContext();
 
-const BaseProvider = props => {
+const BaseContextProvider = props => {
 
   
   const [content, setContent] = useState("");
@@ -10,14 +10,18 @@ const BaseProvider = props => {
   const [speed, setSpeed] = useState(100);
 
   return (
-    <Base.Provider
+    <BaseContext.Provider
       value={{
         content,
-        setContent
+        setContent,
+        setWords,
+        words,
+        speed,
+        setSpeed
       }}
     >
         {props.children}
-    </Base.Provider>
+    </BaseContext.Provider>
   );
 };
-export { BaseProvider, Base };
+export { BaseContextProvider, BaseContext};
