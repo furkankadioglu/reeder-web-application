@@ -7,7 +7,7 @@ const BaseContextProvider = props => {
   
   const [content, setContent] = useState("");
   const [words, setWords] = useState([]);
-  const [speed, setSpeed] = useState(100);
+  const [speed, setSpeed] = useState(500);
 
   return (
     <BaseContext.Provider
